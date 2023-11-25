@@ -1,7 +1,5 @@
 import "./style.css";
-import React from 'react';
 import ImageAPI from './ImageAPI'; 
-import { useState } from "react";
 import ReactDOM from 'react-dom';
 import App from 'react';
 
@@ -84,15 +82,7 @@ document.getElementById('toggleProfile').addEventListener('click', function () {
   });
   
   var izracuni=[];
-    
-
-
-  function renderImages(event) {
-	event.preventDefault();
-	izracunaj();
-	ReactDOM.render(<ImageAPI />, document.getElementById('root'));
-  }
-  
+      
  
 
     document.getElementById("izracunaj").addEventListener("click", izracunaj);
@@ -124,18 +114,19 @@ document.getElementById('toggleProfile').addEventListener('click', function () {
 		
 		izracuni.push({on: on.value, ona: ona.value, postotak: postotak});
 		
-		document.getElementById("ona").value="";
-		document.getElementById("on").value="";
 		
-		
-	
 		return false;
+		
 	}
   
-	
+	document.getElementById('izracunaj').addEventListener('click', function (event) {
+		var ona = document.getElementById("ona");
+		var on = document.getElementById("on");
 	  
-	  document.getElementById('izracunaj').addEventListener('click', function (event) {
-		event.preventDefault();
+		if (ona.value.trim().length === 0 || on.value.trim().length === 0) {
+		  return false;
+		}
+	  
 		ReactDOM.render(<ImageAPI />, document.getElementById('root'));
 	  });
 
