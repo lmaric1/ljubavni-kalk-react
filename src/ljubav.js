@@ -1,7 +1,7 @@
-import "./style.css";
 import ImageAPI from './ImageAPI'; 
 import ReactDOM from 'react-dom';
 import App from 'react';
+import "./style.css";
 
 
 function ljubav(ime1, ime2){

@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import ljubav from './ljubav';
-import index from './index';
+import izracunaj from './ljubav';
+
 const ImageAPI = () => {
     const [images, setImages] = useState([]);
   
     useEffect(() => {
       const fetchImages = async () => {
         try {
-         const urls = [
-      'https://source.unsplash.com/random/1',
-      'https://source.unsplash.com/random/2',
-    ];
-          setImages(urls);
+          const zensko = [
+            'https://source.unsplash.com/random/1',
+          ];
+         const musko = [
+            'https://source.unsplash.com/random/2',
+          ];
+    const zenskoMusko = [zensko, musko];
+
+          setImages(zenskoMusko);
         } catch (error) {
           console.error('Error fetching images:', error);
         }
+        
       };
   
       fetchImages();
@@ -29,6 +35,8 @@ const ImageAPI = () => {
         </div>
       </div>
     );
+    
   };
+  
   
   export default ImageAPI;
