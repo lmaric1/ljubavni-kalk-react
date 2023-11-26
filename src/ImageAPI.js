@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ljubav from './ljubav';
 import izracunaj from './ljubav';
+import "./style.css";
 
 const ImageAPI = () => {
     const [images, setImages] = useState([]);
